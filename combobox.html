@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combobox - Widgets</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div
+        style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
+
+        <div class="combobox">
+            <div class="combobox-options">
+                <div category="1" selected>Opción 1</div>
+                <div category="2">Opción 2</div>
+                <div category="1">Opción 3</div>
+                <div category="3">Opción 4</div>
+                <div category="2">Opción 5</div>
+                <div category="1">Opción 6</div>
+                <div category="3">Opción 7</div>
+            </div>
+            <div class="combobox-description" contenteditable="true">
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script>
+        const elements = Array.from(document.querySelector(".combobox-options").children)
+        elements.forEach(element => {
+            element.addEventListener("click", ()=> {
+                elements.forEach((element) => element.removeAttribute("selected"))
+                element.setAttribute("selected", "")
+
+            })
+        })
+    </script>
+</body>
+
+</html>

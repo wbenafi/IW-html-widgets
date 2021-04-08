@@ -17,7 +17,7 @@
     background-color: rgb(255, 169, 169);
 }
 
-.toggle .circle{
+.toggle .circle {
     width: 18px;
     height: 18px;
     position: absolute;
@@ -28,13 +28,106 @@
     background-color: white;
 }
 
-.toggle[side="l"] .circle{
+.toggle[side="l"] .circle {
     left: 2.5px;
     background-color: gray;
 }
 
-.toggle[side="r"] .circle{
+.toggle[side="r"] .circle {
     left: 37.5px;
     background-color: red;
 }
 
+.combobox {
+    display: flex;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: row-reverse;
+    position: relative;
+}
+
+.combobox-description {
+    max-width: 148px;
+    width: 148px;
+    padding: 10px;
+    height: calc(100% - 24px);
+    border: 2px solid gray;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.combobox-options {
+    width: 100px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.combobox-description div {
+    display: block;
+}
+
+.combobox-options div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.combobox-options div[selected] {
+    border: 2px solid gray;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.combobox-options div:not([selected]) {
+    border-left: 2px solid gray;
+}
+
+.combobox-options div[category="1"], .combobox-options div[category="1"]::before {
+    background-color: rgb(140, 255, 217);
+}
+
+.combobox-options div[category="2"], .combobox-options div[category="2"]::before {
+    background-color: #ffd364;
+}
+
+.combobox-options div[category="3"], .combobox-options div[category="3"]::before {
+    background-color: rgb(255, 179, 204);
+}
+
+.combobox-options div[selected]::before {
+    content: "No hay descripción";
+    padding: 10px;
+    position: absolute;
+    left: 1px;
+    top: 2px;
+    height: 77px;
+    width: 137px;
+    border-radius: 5px 0 0 5px;
+}
+
+.combobox-options div:nth-child(1)[selected]::before {
+    content: "Descripción de la opción 1";
+}
+
+.combobox-options div:nth-child(2)[selected]::before {
+    content: "Descripción de la opción 2";
+}
+.combobox-options div:nth-child(3)[selected]::before {
+    content: "Descripción de la opción 3";
+}
+.combobox-options div:nth-child(4)[selected]::before {
+    content: "Descripción de la opción 4";
+}
+.combobox-options div:nth-child(5)[selected]::before {
+    content: "Descripción de la opción 5";
+}
+.combobox-options div:nth-child(6)[selected]::before {
+    content: "Descripción de la opción 6";
+}
+.combobox-options div:nth-child(7)[selected]::before {
+    content: "Descripción de la opción 7";
+}
