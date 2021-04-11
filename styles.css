@@ -145,7 +145,7 @@
 .meter {
   width: 160px;
   position: fixed;
-  overflow: hidden;
+  overflow: hidden; 
   text-align: center;
   left: 44%;
   top: 39%;
