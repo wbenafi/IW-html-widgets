@@ -13,17 +13,42 @@
 <body>
     <div
         style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
-        <svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px; transform: rotate(45deg); transform-origin: 80% 80%;">
+        
+
+        <div class="meter">
+            <div>
+                <div class="number n0">0%</div>
+                <div class="number n25">25%</div>
+                <div class="number n90">50%</div>
+                <div class="number n75">75%</div>
+                <div class="number n180">100%</div>
+                <div class="circle2"></div>
+                <div class="circle1"></div>
+            </div>
+        </div>
+
+        <div class="range-value">
+            <label for="vol">Medidor</label>
+            <input style="margin-left: 2%;" type="range" id="vol" name="vol" min="-45" max="140">
+        </div>
+        
+        <svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle">
             <path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#202020" fill="#202020"
                 d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
                 data-name="layer2">
             </path>
         </svg>
+        
     </div>
-
+    <output></output>
     <script>
+        let range = document.querySelector('input'); 
+        let needle = document.getElementById('needle');
 
-
+        range.addEventListener('input', function () {
+            let newStyle = "transform: rotate("+ range.value +"deg);"
+            needle.setAttribute('style', newStyle);
+        }, false);
     </script>
 </body>
 
