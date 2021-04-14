@@ -189,7 +189,7 @@ header:hover {
   margin-left: -20px;
   transform-origin: 80% 80%;
   transform: rotate(
-    calc(calc(calc(calc(var(--percent) / 100) * 185) - 45) * 1deg)
+    calc(calc(calc(calc(var(--percent) / calc(var(--maxrange)) - var(--minrange)) * 185) - 45) * 1deg)
   );
   transition: transform 500ms;
 }
@@ -204,6 +204,8 @@ header:hover {
   height: 250px;
   border-radius: 10px;
   --max-alert: 70;
+  --minrange: 0; 
+  --maxrange: 100;
 }
 
 .topmetercontainer {
@@ -295,6 +297,32 @@ header:hover {
   z-index: 1001;
   color: white;
   font-weight: bold;
+}
+
+.min-range::after {
+  position: absolute;
+  z-index: 80;
+  counter-reset: minrange var(--minrange);
+  content: counter(minrange);
+  bottom: 40%;
+  transform-origin: 80% 80%;
+  transform: rotate(-100deg);
+  height: 65%;
+  color: white;
+  font-size: 12px;
+}
+
+.max-range::after {
+  position: absolute;
+  z-index: 80;
+  counter-reset: maxrange var(--maxrange);
+  content: counter(maxrange);
+  bottom: 40%;
+  transform-origin: 80% 80%;
+  transform: rotate(100deg);
+  height: 40%;
+  color: white;
+  font-size: 12px;
 }
 
 .number.n0 {

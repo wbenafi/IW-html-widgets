@@ -14,7 +14,7 @@
     <div
         style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
 
-        <div id="metercontainer" class="meter-container" style="--percent: 50;">
+        <div id="metercontainer" class="meter-container" style="--percent: 50;" min="100" max="1000">
 
             <div class="topmetercontainer">
             </div>
@@ -25,11 +25,8 @@
             <label class="meter-name"> Meter </label>
 
             <div class="meter">
-                <div class="number n25">25</div>
-                <div class="number n50">50</div>
-                <div class="number n75">75</div>
-                <div class="number n0">0</div>
-                <div class="number n180">100</div>
+                <div class="min-range"></div>
+                <div class="max-range"></div>
             </div>
 
             <div class="range-value">
@@ -54,7 +51,7 @@
         let range = document.querySelector('input');
 
         range.addEventListener('input', function () {
-            metercontainer.style = `--percent: ${range.value}`
+            metercontainer.style.setProperty('--percent', range.value)
         }, false);
     </script>
 </body>
