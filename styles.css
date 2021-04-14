@@ -139,8 +139,8 @@
   z-index: 1000;
   height: 40px;
   margin-left: -20px;
-  transform: rotate(45deg);
   transform-origin: 80% 80%;
+  transform: rotate(calc(calc(calc(calc(var(--percent) / 100) * 185) - 45) * 1deg))
 }
 
 .meter {
