@@ -138,6 +138,7 @@
 .needle {
   z-index: 1000;
   height: 40px;
+  margin-left: -20px;
   transform: rotate(45deg);
   transform-origin: 80% 80%;
 }
@@ -147,7 +148,7 @@
   min-height: 120px;
   position: absolute;
   overflow: hidden;
-  left: 46%;
+  margin: auto;
   padding: 5px;
   border-radius: 50%;
   z-index: 999;
