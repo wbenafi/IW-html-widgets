@@ -119,6 +119,21 @@ header:hover {
   border-color: #FE4A49;
 }
 
+.toggle[enabled="false"] {
+  cursor: not-allowed;
+}
+
+.toggle[enabled="false"]::after {
+  content: "";
+  background-color: #FE4A49;
+  width: 50px;
+  height: 4px;
+  left: 10%;
+  top: 40%;
+  transform: rotate(125deg);
+  position: absolute;
+}
+
 .combobox {
   display: flex;
   width: 250px;
@@ -143,15 +158,18 @@ header:hover {
   border: 2px solid gray;
   border-right: none;
   border-radius: 5px 0 0 5px;
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   background-color: inherit;
+  transition: 1s;
 }
 
 [selected] .combobox-description {
   display: block;
+  opacity: 1;
+  z-index: 10;
 }
 
 .combobox-options div {

@@ -31,11 +31,14 @@
                     Para el elemento existe un atributo llamado <code><b>side</b></code>, que determina si el elemento
                     está a la izquierda o a la derecha
                 </div>
+                <div style="padding: 10px 15%; font-size: 20px; text-align: center; line-height: 30px; color: #022334;">
+                   También existe un atributo <code><b>enabled</b></code>, que define si se puede o no cambiar el estado del elemento
+                </div>
             </div>
             <div class="section" style="background-color: #003049;">
                 <div class="code-container">
                     <pre>
-&lt;div class="toggle" <b>side="l"</b>&gt;
+&lt;div class="toggle" <b>side="l" enabled="true"</b>&gt;
     &lt;div class="circle">&lt;/div>
 &lt;/div&gt;</pre>
                 </div>
@@ -44,23 +47,32 @@
                 </div>
                 <div class="code-container" style="margin-top: 15px;">
                     <pre>
-&lt;div class="toggle" <b>side="r"</b>&gt;
+&lt;div class="toggle" <b>side="r" enabled="true"</b>&gt;
     &lt;div class="circle">&lt;/div>
 &lt;/div&gt;</pre>
                 </div>
                 <div class="toggle" side="r" style="margin-top: 20px;">
                     <div class="circle"></div>
                 </div>
+                <div class="code-container" style="margin-top: 15px;">
+                    <pre>
+&lt;div class="toggle" <b>side="l" enabled="false"</b>&gt;
+    &lt;div class="circle">&lt;/div>
+&lt;/div&gt;</pre>
+                </div>
+                <div class="toggle" side="l" enabled="false" style="margin-top: 20px;">
+                    <div class="circle"></div>
+                </div>
             </div>
             <div class="section">
                 <div class="code-container" style="margin-top: 15px;">
                     <pre>
-&lt;div class="toggle" side="l"
+&lt;div class="toggle" side="l" enabled="true"
     <b>onclick="(() => {this.setAttribute('side', this.attributes.side.value == 'l'? 'r': 'l')})()"</b>&gt;
     &lt;div class="circle">&lt;/div>
 &lt;/div&gt;</pre>
                 </div>
-                <div class="toggle" side="l" style="margin-top: 30px;"
+                <div class="toggle" side="l" style="margin-top: 30px;" enabled="true"
                     onclick="(() => {this.setAttribute('side', this.attributes.side.value == 'l'? 'r': 'l')})()">
                     <div class="circle"></div>
                 </div>
