@@ -201,13 +201,17 @@ header:hover {
     background-color: rgb(255, 179, 204);
 }
 
+.meter-header {
+  background-color:  #bbad42;
+}
+
 .needle {
   z-index: 1000;
   height: 40px;
   margin-left: -20px;
   transform-origin: 80% 80%;
   transform: rotate(
-    calc(calc(calc(calc(var(--percent) / calc(var(--maxrange)) - var(--minrange)) * 185) - 45) * 1deg)
+    calc(calc(calc(calc( calc(var(--percent) - var(--minrange)) / calc(var(--maxrange) - var(--minrange)) * 185) - 45) * 1deg))
   );
   transition: transform 500ms;
 }
@@ -217,13 +221,10 @@ header:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(121, 252, 180, 0.986);
+  background-color: #faee94;
   width: 200px;
   height: 250px;
   border-radius: 10px;
-  --max-alert: 70;
-  --minrange: 0; 
-  --maxrange: 100;
 }
 
 .topmetercontainer {
@@ -232,7 +233,7 @@ header:hover {
   width: 100%;
   height: 50px;
   z-index: var(--max-alert);
-  background-color: rgba(121, 252, 180, 0.986);
+  background-color: #faee94;
   border-radius: 9px 9px 0 0;
 }
 
@@ -308,15 +309,6 @@ header:hover {
   z-index: 1001;
 }
 
-.number {
-  width: 30%;
-  max-height: 80px;
-  font-size: 12px;
-  z-index: 1001;
-  color: white;
-  font-weight: bold;
-}
-
 .min-range::after {
   position: absolute;
   z-index: 80;
@@ -324,7 +316,7 @@ header:hover {
   content: counter(minrange);
   bottom: 40%;
   transform-origin: 80% 80%;
-  transform: rotate(-100deg);
+  transform: rotate(-95deg);
   height: 65%;
   color: white;
   font-size: 12px;
@@ -341,27 +333,6 @@ header:hover {
   height: 40%;
   color: white;
   font-size: 12px;
-}
-
-.number.n0 {
-  transform: rotate(-50deg);
-  transform-origin: 0% 80%;
-}
-
-.number.n25 {
-  transform: rotate(-55deg);
-  transform-origin: 100% 50%;
-}
-
-.number.n75 {
-  transform: rotate(70deg);
-  margin-left: -10%;
-  transform-origin: 20% 55%;
-}
-
-.number.n180 {
-  transform: rotate(95deg);
-  transform-origin: 105% 35.5%;
 }
 
 input[type="range"] {

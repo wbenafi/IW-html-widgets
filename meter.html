@@ -5,55 +5,183 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle - Widgets</title>
+    <title>Meter - Widgets</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <header class="meter-header">
+        <h1 style="margin: 0">Meter</h1>
+        <a href="./index.html"
+            style="margin: 0; position: absolute; top: 0; left: 0; color: white; background-color: #696124; padding: 10px; text-decoration: none;">
+            <h4 style="margin: 0">BIONIC Widgets</h4>
+        </a>
+    </header>
+
     <div
-        style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
-
-        <div id="metercontainer" class="meter-container" style="--percent: 50;" min="100" max="1000">
-
-            <div class="topmetercontainer">
+        style="width: 100%; height: calc(75vh); display: flex; justify-content: center; align-items: center; background-color: white; flex-direction: column;">
+        <div style="display: flex; align-items: center; width: 100%;">
+            <div class="section" style="background-color: #696124;">
+                <div style="padding: 15%; font-size: 20px; text-align: center; line-height: 30px;">
+                    El meter tiene como función medir entre un predeterminado rango de valores y en este caso informar si sobre pasa un limite establecido
+                </div>
             </div>
-            <div class="alert">
-                ¡ALERTA! Se pasa del límite
+            <div class="section" style="background-color: #faee94;">
+                <div style="padding: 10px 15%; font-size: 20px; text-align: center; line-height: 30px; color: #022334;">
+                    Para la configuración existe una serie de variables de css 
+                    <ol>
+                        <li>
+                            <code><b>--percent</b></code>: define la posición de la aguja 
+                        </li>
+                        <li>
+                            <code><b>--maxrange</b></code>: define el rango máximo
+                        </li>
+                        <li>
+                            <code><b>--minrange</b></code>: define el rango mínimo
+                        </li>
+                        <li>
+                            <code><b>--max-alert</b></code>: define el valor máximo antes de mostrar la alerta
+                        </li>
+                    </ol>
+                </div>
             </div>
+            <div class="section" style="background-color: #696124;">
+                <div class="code-container" style="margin-top: 15px; max-height: 170px; overflow-y: auto;">
+                    <pre>
+&lt;div id="metercontainer" class="meter-container" style="--percent: 180; --max-alert: 150; --minrange: 50; --maxrange: 200;">
 
-            <label class="meter-name"> Meter </label>
+    &lt;div class="topmetercontainer">
+    &lt;/div>
+    &lt;div class="alert">
+        ¡ALERTA! Se pasa del límite
+    &lt;/div>
 
-            <div class="meter">
-                <div class="min-range"></div>
-                <div class="max-range"></div>
+    &lt;label class="meter-name"> Meter &lt;/label>
+
+    &lt;div class="meter">
+        &lt;div class="min-range">&lt;/div>
+        &lt;div class="max-range">&lt;/div>
+    &lt;/div>
+
+    &lt;div class="range-value">
+        &lt;label for="vol" style="color: black;">Medidor&lt;/label>
+        &lt;input style="margin-left: 2%;" type="range" id="vol" name="vol" min="50" max="200">
+    &lt;/div>
+
+    &lt;svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle"
+        >
+        &lt;path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#c5dedd" fill="#8d99ae"
+            d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
+            data-name="layer2">
+        &lt;/path>
+    &lt;/svg>
+&lt;/div></pre>
+                </div>
+                <div id="metercontainer1" class="meter-container" style="--percent: 180; --max-alert: 150; --minrange: 50; --maxrange: 200; margin-top: 10px;">
+
+                    <div class="topmetercontainer">
+                    </div>
+                    <div class="alert">
+                        ¡ALERTA! Se pasa del límite
+                    </div>
+        
+                    <label class="meter-name"> Meter </label>
+        
+                    <div class="meter">
+                        <div class="min-range"></div>
+                        <div class="max-range"></div>
+                    </div>
+        
+                    <div class="range-value">
+                        <label for="vol" style="color: black;">Medidor</label>
+                        <input style="margin-left: 2%;" type="range" id="vol" name="vol" min="50" max="200">
+                    </div>
+        
+                    <svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle"
+                        >
+                        <path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#c5dedd" fill="#8d99ae"
+                            d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
+                            data-name="layer2">
+                        </path>
+                    </svg>
+        
+                </div>
             </div>
+            <div class="section" style="background-color: #faee94;">
+                <div class="code-container" style="margin-top: 15px; max-height: 170px; overflow-y: auto;">
+                    <pre>
+&lt;div id="metercontainer" class="meter-container" style="--percent: 50; --max-alert: 60; --minrange: 0; --maxrange: 100;">
 
-            <div class="range-value">
-                <label for="vol">Medidor</label>
-                <input style="margin-left: 2%;" type="range" id="vol" name="vol" min="0" max="100">
+    &lt;div class="topmetercontainer">
+    &lt;/div>
+    &lt;div class="alert">
+        ¡ALERTA! Se pasa del límite
+    &lt;/div>
+
+    &lt;label class="meter-name"> Meter &lt;/label>
+
+    &lt;div class="meter">
+        &lt;div class="min-range">&lt;/div>
+        &lt;div class="max-range">&lt;/div>
+    &lt;/div>
+
+    &lt;div class="range-value">
+        &lt;label for="vol">Medidor&lt;/label>
+        &lt;input style="margin-left: 2%;" type="range" id="vol" name="vol" min="0" max="100">
+    &lt;/div>
+
+    &lt;svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle"
+        >
+        &lt;path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#c5dedd" fill="#8d99ae"
+            d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
+            data-name="layer2">
+        &lt;/path>
+    &lt;/svg>
+&lt;/div></pre>
+                </div>
+                <div id="metercontainer2" class="meter-container" style="background-color: #696124; --percent: 60; --max-alert: 70; --minrange: 0; --maxrange: 100; margin-top: 10px;">
+
+                    <div class="topmetercontainer" style="background-color: #696124;">
+                    </div>
+                    <div class="alert">
+                        ¡ALERTA! Se pasa del límite
+                    </div>
+        
+                    <label class="meter-name"> Meter </label>
+        
+                    <div class="meter">
+                        <div class="min-range"></div>
+                        <div class="max-range"></div>
+                    </div>
+        
+                    <div class="range-value">
+                        <label for="vol">Medidor</label>
+                        <input style="margin-left: 2%;" type="range" id="vol" name="vol" min="0" max="100">
+                    </div>
+        
+                    <svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle"
+                        >
+                        <path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#c5dedd" fill="#8d99ae"
+                            d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
+                            data-name="layer2">
+                        </path>
+                    </svg>
+        
+                </div>
             </div>
-
-            <svg viewBox="15 16 22 22" xmlns="http://www.w3.org/2000/svg" class="needle" id="needle"
-                >
-                <path stroke-width="1" stroke-miterlimit="10" stroke-linecap="round" stroke="#c5dedd" fill="#8d99ae"
-                    d="M29.375 35.625L16.293 18.707a1.007 1.007 0 0 1 1.414-1.414l16.918 13.082A3.739 3.739 0 0 1 30 36.254a3.914 3.914 0 0 1-.625-.629z"
-                    data-name="layer2">
-                </path>
-            </svg>
-
         </div>
-
-
     </div>
-    <output></output>
     <script>
-        let range = document.querySelector('input');
+        let range = document.querySelectorAll('input');
 
-        range.addEventListener('input', function () {
-            metercontainer.style.setProperty('--percent', range.value)
+        range[0].addEventListener('input', function () {
+            metercontainer1.style.setProperty('--percent', range[0].value)
+        }, false);
+
+        range[1].addEventListener('input', function () {
+            metercontainer2.style.setProperty('--percent', range[1].value)
         }, false);
     </script>
 </body>
-
 </html>
