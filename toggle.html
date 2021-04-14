@@ -11,9 +11,66 @@
 </head>
 
 <body>
+    <header class="toggle-header">
+        <h1 style="margin: 0">Toggle</h1>
+        <a href="./index.html"
+            style="margin: 0; position: absolute; top: 0; left: 0; color: white; background-color: #3A405A; padding: 10px; text-decoration: none;">
+            <h4 style="margin: 0">BIONIC Widgets</h4>
+        </a>
+    </header>
     <div
-        style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
-        <div class="toggle" side="l"
+        style="width: 100%; height: calc(75vh); display: flex; justify-content: center; align-items: center; background-color: white; flex-direction: column;">
+        <div style="display: flex; align-items: center; width: 100%;">
+            <div class="section" style="background-color: #003049;">
+                <div style="padding: 15%; font-size: 20px; text-align: center; line-height: 30px;">
+                    El toggle funciona para activar o desactivar alguna opción en un formulario
+                </div>
+            </div>
+            <div class="section">
+                <div style="padding: 10px 15%; font-size: 20px; text-align: center; line-height: 30px; color: #022334;">
+                    Para el elemento existe un atributo llamado <code><b>side</b></code>, que determina si el elemento
+                    está a la izquierda o a la derecha
+                </div>
+            </div>
+            <div class="section" style="background-color: #003049;">
+                <div class="code-container">
+                    <pre>
+&lt;div class="toggle" <b>side="l"</b>&gt;
+    &lt;div class="circle">&lt;/div>
+&lt;/div&gt;</pre>
+                </div>
+                <div class="toggle" side="l" style="margin-top: 20px;">
+                    <div class="circle"></div>
+                </div>
+                <div class="code-container" style="margin-top: 15px;">
+                    <pre>
+&lt;div class="toggle" <b>side="r"</b>&gt;
+    &lt;div class="circle">&lt;/div>
+&lt;/div&gt;</pre>
+                </div>
+                <div class="toggle" side="r" style="margin-top: 20px;">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="code-container" style="margin-top: 15px;">
+                    <pre>
+&lt;div class="toggle" <b>side="l"</b>
+    onclick="(() => {this.setAttribute('side', this.attributes.side.value == 'l'? 'r': 'l')})()"&gt;
+    &lt;div class="circle">&lt;/div>
+&lt;/div&gt;</pre>
+                </div>
+                <div class="toggle" side="l" style="margin-top: 30px;"
+                    onclick="(() => {this.setAttribute('side', this.attributes.side.value == 'l'? 'r': 'l')})()">
+                    <div class="circle"></div>
+                </div>
+                <div style="padding: 10px 12%; font-size: 20px; text-align: center; line-height: 30px; color: #022334; margin-top: 10px;">
+                    Si le agregamos funcionalidad con js, se puede realizar que el elemento cambie el atributo con un
+                    <code><b>click</b></code>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="toggle" side="l"
             onclick="(() => {this.setAttribute('side', this.attributes.side.value == 'l'? 'r': 'l')})()">
             <div class="circle"></div>
         </div>
@@ -28,7 +85,7 @@
             <div class="circle">
 
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
