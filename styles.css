@@ -134,6 +134,10 @@ header:hover {
   position: absolute;
 }
 
+.combobox-header {
+  background-color: #6c9160;;
+}
+
 .combobox {
   display: flex;
   width: 250px;
@@ -142,6 +146,7 @@ header:hover {
   border-radius: 5px;
   flex-direction: row-reverse;
   position: relative;
+  color: rgb(59, 59, 59);
 }
 
 .combobox-options {
