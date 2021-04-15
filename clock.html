@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <style id="clock-animate"></style>
+  </head>
+  <body>
+    <div style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
+        <div class="clock">
+            <div class="center-negro"></div>
+            
+            <div class="center-rojo"></div>
+            <div class="indicadores">
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="sec-line">
+            </div>
+            <div class="min-line">
+            </div>
+            <div class="hr-line">
+            </div>
+            </div>
+
+    </div>
+    <script >
+      var time = new Date(),
+      second = time.getSeconds() / 60 * 360,
+      minute = time.getMinutes() / 60 * 360 + time.getSeconds() / 60 *6,
+      hour = time.getHours() / 12 * 360 + time.getMinutes() /60 * 30;
+      document.querySelector('.sec-line').style = `--sec:${second}`;
+      document.querySelector('.min-line').style= `--min:${minute}`;
+      document.querySelector('.hr-line').style= `--hr:${hour}`;
+    </script>
+    </body>
+</html>
