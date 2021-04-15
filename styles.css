@@ -433,21 +433,10 @@ input[type="range"]::-webkit-slider-thumb {
   transform: rotate(360deg) translateY(-113px);
   background: red;
 }
-@keyframes sec-line{
-  from{transform: rotate(var(--secani)deg);}
-  to{transform: rotate(calc(var(--secani) + 360)deg);}
-}
-@keyframes min-line{
-  from{transform: rotate(var(--minani)deg);}
-  to{transform: rotate(calc(var(--minani) + 360)deg);}
-}
-@keyframes hr-line{
-  from{transform: rotate(var(--hrani)deg);}
-  to{transform: rotate(calc(var(--hrani) + 360)deg);}
-}
 .sec-line{
-  transform: rotate(calc(var(--sec)*1deg));
-  transition: transform 1s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(calc(calc(calc(var(--sec)/60)*360)*1deg));
+  transition: transform 0.1s;
   position: absolute;
   height: 1px;
   width: 1px;
@@ -473,13 +462,12 @@ input[type="range"]::-webkit-slider-thumb {
   background: red;
   border-radius: 3px;
 }
-.min-line{
-  transform: rotate(var(--min));
+.min-line{ 
+  transform: rotate(calc( calc( calc(    calc(  calc( var(--min)/60 )  * 360 )) + calc(   calc(   var(--sec)/60 ) * 6)) *1deg) );
   position: absolute;
   height: 1px;
   width: 1px;
   z-index: 4;
-  animation: min-line 3600s linear infinite;
 }
 .min-line:before{
   position: absolute;
@@ -504,12 +492,11 @@ input[type="range"]::-webkit-slider-thumb {
   height: 1px;
 }
 .hr-line{
-  transform: rotate(var(--hr));
+  transform: rotate(calc( calc( calc(    calc(  calc( var(--hr)/12 )  * 360 )) + calc(   calc(   var(--min)/60 ) * 30)) *1deg) );
   position: absolute;
   height: 1px;
   width: 1px;
   z-index: 3;
-  animation: hr-line 43200s linear infinite;
 }
 .hr-line:before{
   position: absolute;

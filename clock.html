@@ -7,10 +7,9 @@
     <style id="clock-animate"></style>
   </head>
   <body>
-    <div style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: rgb(250, 224, 190); flex-direction: column;">
+    <div style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: #52B788; flex-direction: column;">
         <div class="clock">
             <div class="center-negro"></div>
-            
             <div class="center-rojo"></div>
             <div class="indicadores">
                 <div>
@@ -44,17 +43,21 @@
             </div>
             <div class="hr-line">
             </div>
-            </div>
+      </div>
 
     </div>
     <script >
-      var time = new Date(),
-      second = time.getSeconds() / 60 * 360,
-      minute = time.getMinutes() / 60 * 360 + time.getSeconds() / 60 *6,
-      hour = time.getHours() / 12 * 360 + time.getMinutes() /60 * 30;
-      document.querySelector('.sec-line').style = `--sec:${second}`;
-      document.querySelector('.min-line').style= `--min:${minute}`;
-      document.querySelector('.hr-line').style= `--hr:${hour}`;
+        function setTime() {
+          var time = new Date(),
+          second = time.getSeconds();
+          minute = time.getMinutes();
+          hour = time.getHours();
+          console.log(second);
+          console.log(minute);
+          console.log(hour);
+          document.querySelector('.clock').style = `--sec:${second}; --min:${minute}; --hr:${hour}`;
+        }
+        var interval = window.setInterval(setTime,1000);
     </script>
     </body>
 </html>
