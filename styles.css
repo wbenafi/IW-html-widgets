@@ -368,6 +368,18 @@ input[type="range"]::-webkit-slider-thumb {
   border: 16px solid #303030;
   box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
 }
+.clock-example1{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background: #e9fcfc;
+  border-radius: 50%;
+  border: 16px solid #303030;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+}
 .center-negro,.center-rojo{
   position: absolute;
   top: 50%;
@@ -519,4 +531,8 @@ input[type="range"]::-webkit-slider-thumb {
   top: -20px;
   width: 3px;
   height: 1px;
+}
+
+.clock-header{
+  background-color:  #52B788;
 }

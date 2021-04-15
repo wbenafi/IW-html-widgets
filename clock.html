@@ -2,13 +2,122 @@
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock - Widgets</title>
+
     <link rel="stylesheet" href="styles.css">
-    <style id="clock-animate"></style>
   </head>
   <body>
-    <div style="width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center; background-color: #52B788; flex-direction: column;">
-        <div class="clock">
+    <header class="clock-header">
+      <h1 style="margin: 0">Clock</h1>
+      <a href="./index.html"
+          style="margin: 0; position: absolute; top: 0; left: 0; color: white; background-color: #326d51; padding: 10px; text-decoration: none;">
+          <h4 style="margin: 0">BONIC Widgets</h4>
+      </a>
+    </header>
+    <div 
+      style="width: 100%; height: calc(75vh); display: flex; justify-content: center; align-items: center; background-color: white; flex-direction: column;">
+      <div style="display: flex; align-items: center; width: 100%;">
+        <div class="section" style="background-color: #326d51;">
+          <div style="padding: 15%; font-size: 20px; text-align: center; line-height: 30px;">
+              El clock funciona para indicar la hora por medio de variables indicadas desde HTML
+          </div>
+        </div>
+        <div class="section" style="background-color: #8bfdc8;">
+            <div style="padding: 10px 15%; font-size: 20px; text-align: center; line-height: 30px; color: #022334;">
+                Para la configuración existe una serie de variables de css 
+                <ol>
+                    <li>
+                        <code><b>--sec</b></code>: Indica los segundos
+                    </li>
+                    <li>
+                        <code><b>--min</b></code>: Indica los minutos
+                    </li>
+                    <li>
+                        <code><b>--hr</b></code>: Indica las horas
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section" style="background-color: #326d51;">
+            <div class="clock-example1"  style="--sec:30; --min:20; --hr:5;margin-bottom: 10%;">
+              <div class="center-negro"></div>
+              <div class="center-rojo"></div>
+              <div class="indicadores">
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+              </div>
+              <div class="sec-line" >
+              </div>
+              <div class="min-line">
+              </div>
+              <div class="hr-line">
+            </div>
+          </div>
+          <div class="code-container" style="margin-top: 15px; max-height: 170px; overflow-y: auto;">
+              <pre>
+&lt;div class="clock-example1"  style="--sec:30; --min:20; --hr:5;margin-bottom: 10%;">
+    &lt;div class="center-negro">&lt;/div>
+    &lt;div class="center-rojo">&lt;/div>
+    &lt;div class="indicadores">
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+        &lt;div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="sec-line" >
+    &lt;/div>
+    &lt;div class="min-line">
+    &lt;/div>
+    &lt;div class="hr-line">
+  &lt;/div>
+&lt;/div></pre>
+        </div>
+      <!-- <div class="clock">
             <div class="center-negro"></div>
             <div class="center-rojo"></div>
             <div class="indicadores">
@@ -42,11 +151,68 @@
             <div class="min-line">
             </div>
             <div class="hr-line">
-            </div>
-      </div>
+            </div> -->
+      
 
+        </div>
+        <div class="section" style="background-color: #8bfdc8;">
+            <div class="clock">
+              <div class="center-negro"></div>
+              <div class="center-rojo"></div>
+              <div class="indicadores">
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+                  <div>
+                  </div>
+              </div>
+              <div class="sec-line">
+              </div>
+              <div class="min-line">
+              </div>
+              <div class="hr-line">
+              </div>
+            </div>
+            <div style="padding: 10px 12%; font-size: 20px; text-align: center; line-height: 30px; color: #022334; margin-top: 10px;">
+                Es posible crear un reloj funcional si se utiliza javascript para asignar las variables cada segundo
+            </div>
+            <div class="code-container" style="margin-top: 15px; ">
+                <pre>
+function setTime() {
+  var time = new Date(),
+  second = time.getSeconds();
+  minute = time.getMinutes();
+  hour = time.getHours();
+  console.log(second);
+  console.log(minute);
+  console.log(hour);
+  document.querySelector('.clock').style = `--sec:${second}; --min:${minute}; --hr:${hour}`;
+}
+var interval = window.setInterval(setTime,1000);</pre>
+            </div>
+        </div>
+      </div>
     </div>
-    <script >
+    <script>
         function setTime() {
           var time = new Date(),
           second = time.getSeconds();
